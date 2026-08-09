@@ -1,0 +1,249 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:visible;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ececec;
+}
+
+.app{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+.navigation-panel{
+
+    background:#ffffff;
+
+    padding:15px;
+
+    display:flex;
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    gap:15px;
+
+    border-bottom:2px solid #d9d9d9;
+}
+
+.select-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.select-group label{
+
+    font-weight:bold;
+}
+
+.select-group select{
+
+    width:220px;
+
+    padding:8px;
+
+    font-size:15px;
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-left:auto;
+}
+
+button{
+
+    padding:10px 20px;
+
+    cursor:pointer;
+
+    border:none;
+
+    border-radius:6px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:#1976d2;
+
+    transition:.25s;
+}
+
+button:hover{
+
+    background:#1565c0;
+}
+
+button:disabled{
+
+    background:#999;
+
+    cursor:not-allowed;
+}
+
+#stairsButton{
+
+    background:#ff9800;
+}
+
+#stairsButton:hover{
+
+    background:#ef6c00;
+}
+
+.floor-information{
+
+    background:white;
+
+    border-bottom:1px solid #ddd;
+
+    padding:12px 20px;
+
+    font-size:20px;
+
+    font-weight:bold;
+}
+
+#currentFloorName{
+
+    color:#1976d2;
+}
+
+.map-container{
+
+    flex:1;
+
+    overflow:visible;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#bdbdbd;
+}
+#mapContainer svg{
+    overflow:visible;
+}
+.map-container {
+
+    flex:1;
+
+    overflow:visible;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#bdbdbd;
+
+    touch-action:none;
+
+}
+
+
+.map-container svg {
+
+    width:100%;
+
+    height:100%;
+
+    transform-origin:center center;
+
+}
+
+/* punkty aktywnej trasy */
+
+.routePoint{
+
+    fill:#2196f3 !important;
+
+    stroke:#0d47a1 !important;
+}
+
+/* wszystkie ukryte */
+
+.hiddenPoint{
+
+    display:none !important;
+}
+/* ======================================
+   MIGAJĄCE PUNKTY TRASY
+====================================== */
+
+.route-active {
+
+    fill: blue;
+    animation: routeBlink 1s infinite;
+
+}
+
+
+@keyframes routeBlink {
+
+    0% {
+        opacity: 1;
+    }
+
+
+    50% {
+        opacity: 0.2;
+    }
+
+
+    100% {
+        opacity: 1;
+    }
+
+}
+.destination-active {
+
+    fill: rgb(0, 38, 255) !important;
+
+    stroke: rgb(0, 64, 255) !important;
+
+    stroke-width: 8px !important;
+
+    animation: destinationPulse 1s infinite;
+
+}
+
+
+@keyframes destinationPulse {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
